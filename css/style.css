@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+    
+body {
+    font-family: "Tilt Neon", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1;
+    background-image: linear-gradient(to right bottom, #000000, #060606, #0b0b0b, #101010, #141414, #17161c, #1a1825, #1d192d, #21183c, #27164a, #301158, #3b0464);
+    background-color: #1a1818;
+    color: #ffffff;
+    height: 100vh;
+    position: relative;
+}
+
+    .logoPrincipal{
+        width: 85px;
+        height: 85px;
+    }
+
+    .fa-bars{
+        color: #55ffe2;
+    }
+
+    h1{
+        font-size: 3.9rem;
+        color: #55ffe2;
+    }
+
+    h2{
+        font-size: 2.1rem;
+        color: #8806e6;
+        margin-top: -15px;
+    }
+
+    h5{
+        color: #1a1818;
+    }
+    
+    .mensajePrincipal {
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: 120px;
+        left: 120px;
+    }
+    @media screen and (max-width: 768px){
+        .mensajePrincipal {
+            top: 100px;
+            left: 70px;
+        }
+        h1{
+            font-size: 3.5rem;
+            color: #55ffe2;
+        }
+    
+        h2{
+            font-size: 1.8rem;
+            color: #8806e6;
+            margin-top: -15px;
+        }
+    }
+
+/*Potencial*/
+.tituloPotencial{
+    font-size: 3.7rem;
+    color: #8806e6;
+    width: 70%;
+    line-height: 0.8;
+}
+.imagenPotencial {
+    width: 305px;
+    height: auto;
+    padding: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.imagenPotencial:hover {
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+.divPotencial {
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 8%;
+    left: 50%;
+}
+.texto-izquierda {
+    position: absolute;
+    top: 77%;
+    transform: translateY(-50%);
+    background-color: rgba(184, 184, 184, 0.308); 
+    font-size: 1.3rem;
+    width: 130px;
+    min-height: 60px;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease; 
+    backdrop-filter: blur(3px);
+    border-radius: 3px;
+    border: 1px solid #55ffe2;
+}
+.texto-derecha {
+    position: absolute;
+    top: 77%; 
+    transform: translateY(-50%);
+    background-color: rgba(184, 184, 184, 0.308); 
+    font-size: 1.3rem;
+    width: 130px;
+    min-height: 60px;
+    text-align: center;
+    padding: 10px;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(3px);
+    border-radius: 3px;
+    border: 1px solid #55ffe2;
+}
+.texto-izquierda {
+    left: 1.1%; 
+    color: #55ffe2;
+}
+.texto-derecha {
+    right: 1.1%; 
+    color: #55ffe2;
+}
+.container-imagen:hover .texto-izquierda,
+.container-imagen:hover .texto-derecha {
+    opacity: 1;
+}
+
+/* Galeria de Fotos*/
+.galeriaFotos{
+    width: 650px;
+    margin: 10% auto auto 49.8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 305px 305px;
+    grid-template-areas: "grilla1 grilla3"
+                         "grilla2 grilla4";
+    gap: 20px;   
+    .g1{
+        grid-area: grilla1;
+        position: relative;
+    }
+    .g2{
+        grid-area: grilla2;
+        position: relative;
+    }
+    .g3{
+        grid-area: grilla3;
+        position: relative;
+    } 
+    .g4{
+        grid-area: grilla4;
+        position: relative;
+    } 
+    
+    .g1, .g2, .g3, .g4 {
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    .galeriaFotos{
+        width: 85%;
+        grid-template-rows: 150px 150px 120px 180px;
+        gap: 20px;
+    }
+}
+
+
+/* Estilos Plazo Fijo */
+.containerPF {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+.contentPF {
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+.btnAcceso{
+    background-color: #1a1818;
+    color: #55ffe2;
+    border: 1px solid #55ffe2;
+    font-size: 1.3rem;
+    margin: 15px;
+    &:hover{
+        background-color: #55ffe2;
+        color: #1a1818;
+    }
+    &:active{
+        background-color: #55ffe2;
+        color: #1a1818;
+    }
+    &:focus{
+        background-color: #55ffe2;
+        color: #1a1818;
+    }
+}
