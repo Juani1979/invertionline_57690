@@ -18,18 +18,41 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"><img class="logoMenu" src="../assets/img/logo.png" alt="Logo Invertí Online" title="Invertí Online">&nbsp;&nbsp;&nbsp;Invertí Online</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse  justify-content-end" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../pages/prestamos.html">Simulá tu Prestamo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active colorActive" href="../pages/plazo_fijo.html">Simulá tu Plazo Fijo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../pages/contacto.html">Contacto</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+    </nav>
 
     <div class="containerPF">
         <div class="contentPF">
-            <button id="btnIndex" class="btn btn-primary btnAcceso">Inicio</button>
-            <button id="btnPlazoFijo" class="btn btn-primary btnAcceso">Simulá tu Plazo Fijo</button>
+            <button id="btnPlazoFijo" class="btn btn-primary btnAcceso">Simulá ahora tu Plazo Fijo</button>
             <button id="btnTasas" class="btn btn-primary btnAcceso">Consultá las Tasas</button>
         </div>
     </div>
 
-    <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/jquery-3.5.1.slim.min.js"></script>
     <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
 
     <script src="../js/main_plazo_fijo.js"></script>
     <script src="../js/plazo_fijo.js"></script>

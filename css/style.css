@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 
-* {
+*{
     margin: 0;
     padding: 0;
 }
     
-body {
+body{
     font-family: "Tilt Neon", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -18,53 +18,123 @@ body {
     position: relative;
 }
 
-    .logoPrincipal{
-        width: 85px;
-        height: 85px;
-    }
+.contenidoEfecto{
+    opacity: 0;
+    transition: opacity 2s, transform 3s; 
+}
 
-    .fa-bars{
+.contenidoEfecto.mostrar{
+    opacity: 1;
+}
+
+.logoPrincipal{
+    width: 85px;
+    height: 85px;
+}
+
+/* Menú Index*/
+.offcanvas{
+    background-image: linear-gradient(to right bottom, #000000, #060606, #0b0b0b, #101010, #141414, #17161c, #1a1825, #1d192d, #21183c, #27164a, #301158, #3b0464);
+    .offcanvas-title{
+        color: #55ffe2;
+        padding-top: 10px;
+        padding-left: 10px;
+        font-size: 1.3rem;
+    }
+    .btn-close{
+        background-color: #55ffe2;
+    }
+    .nav-link{
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        padding: 10px 15px 10px 15px;
+        margin-top: 5px;
+        margin-left: 40px;
+        border: 3px;
+    }    
+    .nav-link.colorActive{
+        background-color: #37035c;
         color: #55ffe2;
     }
+    .nav-link:hover, .nav-link:focus {
+        color: #55ffe2;
+    }
+}
 
+/* Menú */
+.navbar{
+    background-color: #0f001a;
+    box-shadow: 0 4px 15px rgba(80, 80, 80, 0.123);
+    .navbar-brand{
+        color: #55ffe2;
+    }
+    .logoMenu{
+        width: 40px;    
+        height: 40px;
+    }
+    .nav-link{
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        padding: 10px 20px 10px 20px;
+        margin: 10px;
+        border: 1px solid transparent;
+    }    
+    .nav-link.colorActive{
+        background-color: #37035c;
+        color: #55ffe2;
+        border-radius: 5px;
+    }
+    .nav-link:hover, .nav-link:focus {
+        color: #55ffe2;
+        border: 1px solid #37035c;
+        border-radius: 5px;
+    }
+}
+
+.fa-bars{
+    color: #55ffe2;
+}
+
+h1{
+    font-size: 3.9rem;
+    color: #55ffe2;
+}
+
+h2{
+    font-size: 2.1rem;
+    color: #8806e6;
+    margin-top: -15px;
+}
+
+h5{
+    color: #1a1818;
+}
+
+.mensajePrincipal{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 120px;
+    left: 120px;
+}
+@media screen and (max-width: 768px){
+    .mensajePrincipal {
+        top: 100px;
+        left: 70px;
+    }
     h1{
-        font-size: 3.9rem;
+        font-size: 3.5rem;
         color: #55ffe2;
     }
 
     h2{
-        font-size: 2.1rem;
+        font-size: 1.8rem;
         color: #8806e6;
         margin-top: -15px;
     }
-
-    h5{
-        color: #1a1818;
-    }
-    
-    .mensajePrincipal {
-        position: absolute;
-        width: auto;
-        height: auto;
-        top: 120px;
-        left: 120px;
-    }
-    @media screen and (max-width: 768px){
-        .mensajePrincipal {
-            top: 100px;
-            left: 70px;
-        }
-        h1{
-            font-size: 3.5rem;
-            color: #55ffe2;
-        }
-    
-        h2{
-            font-size: 1.8rem;
-            color: #8806e6;
-            margin-top: -15px;
-        }
-    }
+}
 
 /*Potencial*/
 .tituloPotencial{
@@ -135,7 +205,7 @@ body {
     opacity: 1;
 }
 
-/* Galeria de Fotos*/
+/* Galeria Principal*/
 .galeriaFotos{
     width: 650px;
     margin: 10% auto auto 49.8%;
@@ -180,7 +250,7 @@ body {
 }
 
 
-/* Estilos Plazo Fijo */
+/* Estilos Plazo Fijo y Crédito */
 .containerPF {
     position: absolute;
     top: 50%;
