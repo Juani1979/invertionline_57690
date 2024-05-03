@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados Plazo Fijo</title>
+</head>
+<body>
+    <div id="resultados"></div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const parametros = new URLSearchParams(window.location.search);
+        const plazoDias = parametros.get('plazoDias');
+        const capital = parametros.get('capital');
+        const interesesGanados = parametros.get('interesesGanados');
+        const montoTotal = parametros.get('montoTotal');
+        const tasaMensual = parametros.get('tasaMensual');
+    
+        const resultadosDiv = document.getElementById('resultados');
+        resultadosDiv.innerHTML = "Plazo: " + plazoDias + " días<br>" +
+                                   "Tasa Mensual: " + tasaMensual + "%" + "<br><br>" +
+                                   "Capital: $" + capital + "<br>" +
+                                   "Intereses Ganados: $" + interesesGanados + "<br><br>" +
+                                   "Monto Total: $" + montoTotal;
+    });
+    </script>
+
+
+    <script src="plazo_fijo.js"></script>
+</body>
+</html>
