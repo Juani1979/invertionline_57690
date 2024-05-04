@@ -1,32 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados Plazo Fijo</title>
+    <title>Simulá tu Plazo Fijo | INVERTI ONLINE</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/92ab279d80.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div id="resultados"></div>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"><img class="logoMenu" src="../assets/img/logo.png" alt="Logo Invertí Online" title="Invertí Online">&nbsp;&nbsp;&nbsp;Invertí Online</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/prestamos.html">Simulá tu Prestamo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active colorActive" href="../pages/plazo_fijo.html">Simulá tu Plazo Fijo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row full-height">
+            <div class="col-sm-4 columna-imagen">
+                <img src="../assets/img/img_plazofijo.jpg" alt="Inverí Online">
+            </div>
+            <div class="col-sm-8">
+                <p class="tituloPrincipal">Nuestra propuesta para tu Plazo Fijo</p>
+                <p class="tituloSecundario">Una alternativa de inversión de muy bajo riesgo que te permite obtener rendimientos sobre tus ahorros a cambio de inmovilizarlos durante un periodo de tiempo.</p>
+                <div class="divResultados" id="resultados">
+                    <table class="table" border="0">
+                        <tbody>
+                        <tr>
+                            <td class="txtTabla">Plazo</td>
+                            <td class="txtTabla"><p class="plazo"></p></td>
+                        </tr>
+                        <tr>
+                            <td class="txtTabla">Tasa Mensual</td>
+                            <td class="txtTabla"><p class="tasa"></p></td>
+                        </tr>
+                        <tr>
+                            <td class="txtTabla">Capital</td>
+                            <td class="txtTabla"><p class="capital"></p></td>
+                        </tr>
+                        <tr>
+                            <td class="txtTabla">Intereses Ganados</td>
+                            <td class="txtTabla"><p class="intereses"></p></td>
+                        </tr>
+                        <tr>
+                            <td class="txtTabla txtTablaTotal">Monto Total</td>
+                            <td class="txtTabla"><p class="monto"></p></td>
+                        </tr>
+                        </tbody>
+                    </table>                    
+                </div>
+
+                <center><a href="404.html" class="btn btn-primary btnAcceso">Contratar</a>
+                <a href="javascript:history.back()" class="btn btn-primary btnAcceso">Regresar</a></center>
+
+                <p class="textoChico">El uso de esta herramienta no implica celebrar contrato alguno con nosotros. La exhibición de los productos, servicios o información financiera que se brinda a través de la misma, sólo tiene carácter informativo y orientativo para el interesado respecto de los depósitos a plazo fijo que se realicen por este canal.</p>
+            </div>
+        </div>
+    </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const parametros = new URLSearchParams(window.location.search);
-        const plazoDias = parametros.get('plazoDias');
-        const capital = parametros.get('capital');
-        const interesesGanados = parametros.get('interesesGanados');
-        const montoTotal = parametros.get('montoTotal');
-        const tasaMensual = parametros.get('tasaMensual');
-    
-        const resultadosDiv = document.getElementById('resultados');
-        resultadosDiv.innerHTML = "Plazo: " + plazoDias + " días<br>" +
-                                   "Tasa Mensual: " + tasaMensual + "%" + "<br><br>" +
-                                   "Capital: $" + capital + "<br>" +
-                                   "Intereses Ganados: $" + interesesGanados + "<br><br>" +
-                                   "Monto Total: $" + montoTotal;
-    });
+        document.addEventListener('DOMContentLoaded', function() {
+            const parametros = new URLSearchParams(window.location.search)
+            const plazoDias = parametros.get('plazoDias')
+            const capital = parametros.get('capital')
+            const interesesGanados = parametros.get('interesesGanados')
+            const montoTotal = parametros.get('montoTotal')
+            const tasaMensual = parametros.get('tasaMensual')
+
+            const resultadosDiv = document.getElementById('resultados')
+            resultadosDiv.querySelector('.plazo').innerHTML = plazoDias + " días"
+            resultadosDiv.querySelector('.tasa').innerHTML = tasaMensual + "%"
+            resultadosDiv.querySelector('.capital').innerHTML = "$" + capital
+            resultadosDiv.querySelector('.intereses').innerHTML = "$" + interesesGanados
+            resultadosDiv.querySelector('.monto').innerHTML = "$" + montoTotal
+        })
     </script>
 
+    <script src="../js/jquery-3.5.1.slim.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
-    <script src="plazo_fijo.js"></script>
+    <script src="../js/main_plazo_fijo.js"></script>
+    <script src="../js/plazo_fijo.js"></script>
 </body>
 </html>

@@ -1,3 +1,16 @@
+function mostrarAlerta(mensaje) {
+    const customAlert = document.getElementById("customAlert")
+    const customAlertMessage = document.getElementById("customAlertMessage")
+    const customAlertClose = document.getElementById("customAlertClose")
+
+    customAlertMessage.textContent = mensaje
+    customAlert.style.display = "block"
+
+    customAlertClose.addEventListener("click", function() {
+        customAlert.style.display = "none"
+    });
+}
+
 function funcionPlazoFijo() {
     const tasas = [
         { rango: [30, 59], tasa: 0.4 },
@@ -11,100 +24,71 @@ function funcionPlazoFijo() {
                 return tasa.tasa;
             }
         }
-        return null; // Si no se encuentra una tasa para el plazo dado
+        return null;
     }
 
     function calcularIntereses(capital, tasaMensual, plazoDias) {
-        const diasAnio = 365;
-        return (capital * tasaMensual) * (plazoDias / diasAnio);
+        const diasAnio = 365
+        return (capital * tasaMensual) * (plazoDias / diasAnio)
     }
 
-    const plazoDias = parseInt(prompt("Plazo (en días):"));
-    const capital = parseInt(prompt("Capital a Invertir:"));
+    const plazoDias = parseInt(document.getElementById("plazoDias").value)
+    const capital = parseInt(document.getElementById("capital").value)
 
     if (isNaN(plazoDias) || isNaN(capital) || plazoDias <= 0 || capital <= 0) {
-        alert("Por favor, ingrese valores válidos para calcular su Plazo Fijo.");
+        mostrarAlerta("Por favor, ingrese valores válidos para calcular su Plazo Fijo.")
     } else {
         if (plazoDias >= 30 && plazoDias <= 365) {
-            const tasaMensual = obtenerTasaMensual(plazoDias);
+            const tasaMensual = obtenerTasaMensual(plazoDias)
             if (tasaMensual !== null) {
-                const interesGanado = calcularIntereses(capital, tasaMensual, plazoDias);
-                const montoTotal = capital + interesGanado;
-                const tasaPlazoFijo = tasaMensual * 100;
+                const interesGanado = calcularIntereses(capital, tasaMensual, plazoDias)
+                const montoTotal = capital + interesGanado
+                const tasaPlazoFijo = tasaMensual * 100
 
                 // Redirigir a plazo_fijo_res.html con los resultados en la URL
                 window.location.href = "plazo_fijo_res.html?plazoDias=" + plazoDias +
-                                        "&capital=" + capital +
-                                        "&interesesGanados=" + interesGanado.toFixed(2) +
-                                        "&montoTotal=" + montoTotal.toFixed(2) +
-                                        "&tasaMensual=" + tasaPlazoFijo.toFixed(0);
+                    "&capital=" + capital +
+                    "&interesesGanados=" + interesGanado.toFixed(2) +
+                    "&montoTotal=" + montoTotal.toFixed(2) +
+                    "&tasaMensual=" + tasaPlazoFijo.toFixed(0)
             } else {
-                alert("No se encontró una tasa para el plazo ingresado.");
+                mostrarAlerta("No se encontró una tasa para el plazo ingresado.")
             }
         } else {
-            alert("El plazo ingresado debe ser mayor o igual a 30 días y menor o igual a 365 días.");
+            mostrarAlerta("El plazo ingresado debe ser mayor o igual a 30 días y menor o igual a 365 días.")
         }
     }
 }
 
+document.getElementById("plazoFijoForm").addEventListener("submit", function(event) {
+    event.preventDefault()
+    funcionPlazoFijo()
+});
 
+// Limpiar el Contenido de la Modal
+$('#modalTasas').on('hidden.bs.modal', function () {
+    let cuerpoModal = document.getElementById('tasasContenido')
+    cuerpoModal.innerHTML = ''
+    location.reload()
+})
 
-/*Funcion Vieja */
-/*function funcionPlazoFijo() {
-    // Cantidad de días
-    const diasAnio = 365
-
-    // Ingreso de Datos
-    const plazoDias = parseInt(prompt("Plazo (en días):"))
-    const capital = parseInt(prompt("Capital a Invertir:"))
-
-    // Validar datos ingresados
-    if (isNaN(plazoDias) || isNaN(capital) || plazoDias <= 0 || capital <= 0) {
-        alert("Por favor, ingrese valores válidos para calcular su Plazo Fijo.")
-    } else {
-        if (plazoDias >= 30 && plazoDias <= 365) {
-            // Buscar la Tasa Mensual x Rango de Días
-            let tasaMensual;
-            switch (true) {
-                case plazoDias >= 30 && plazoDias <= 59:
-                    tasaMensual = 40/100
-                    break;
-                case plazoDias >= 60 && plazoDias <= 89:
-                    tasaMensual = 35/100
-                    break;
-                case plazoDias >= 90 && plazoDias <= 365:
-                    tasaMensual = 25/100
-                    break;
-            }
-
-            // Calcular Intereses
-            let interesGanado = 0
-            interesGanado += (capital * tasaMensual) * (plazoDias / diasAnio)
-        
-            // Calcular Total
-            const montoTotal = capital + interesGanado
-
-            // Tasa Mensual Porcentual
-            let tasaPlazoFijo = tasaMensual*100
-
-            // Mostrar Resultados
-            let mensaje = "Plazo: " + plazoDias + " días\n" +
-                        "Tasa Mensual: " + tasaPlazoFijo.toFixed(0) + "%" + "\n\n" +
-                        "Capital: $" + capital.toFixed(0) + "\n" +
-                        "Intereses Ganados: $" + interesGanado.toFixed(2) + "\n\n" +
-                        "Monto Total: $" + montoTotal.toFixed(2)
-            alert(mensaje)
-        } else {
-            alert("El plazo ingresado debe ser mayor o igual a 30 días y menor o igual a 365 días.")
-        }
-    }
-}*/
-
+// Mostrar las Tasas en la Modal
 function funcionTasas() {
-    // Mostrar Tasas
-    let mensaje = "Tasas de Interés Aplicadas \n\n" +
-                  "De 30 a 59 días: 40% \n" +
-                  "De 60 a 89 días: 35% \n" +
-                  "De 90 a 365 días: 25%"
-    alert(mensaje)
+    let tasas = {
+        "De 30 a 59 días": "40%",
+        "De 60 a 89 días": "35%",
+        "De 90 a 365 días": "25%"
+    }
+
+    let cuerpoModal = document.getElementById('tasasContenido')
+    cuerpoModal.innerHTML = ''
+    for (let tasa in tasas) {
+        let parrafo = document.createElement('p')
+        parrafo.textContent = `${tasa}: ${tasas[tasa]}`
+        cuerpoModal.appendChild(parrafo)
+    }
+    // Muestro la Modal
+    $('#modalTasas').modal('show')
 }
+// Buscar la función funcionTasas
+document.getElementById('btnTasas').addEventListener('click', funcionTasas)
