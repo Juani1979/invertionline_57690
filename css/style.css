@@ -32,6 +32,11 @@ body{
     height: 85px;
 }
 
+.logoMenuPrincipal{
+    width: 30px;    
+    height: 30px;
+}
+
 /* Menú Index*/
 .offcanvas{
     background-image: linear-gradient(to right bottom, #000000, #060606, #0b0b0b, #101010, #141414, #17161c, #1a1825, #1d192d, #21183c, #27164a, #301158, #3b0464);
@@ -294,8 +299,8 @@ h5{
     background-image: linear-gradient(to right bottom, #000000, #060606, #0b0b0b, #101010, #141414, #17161c, #1a1825, #1d192d, #21183c, #27164a, #301158, #3b0464);
     border: 1px solid #fff;
     padding: 30px;
-    width: 400px; /* Ancho ajustado */
-    height: 210px; /* Alto ajustado */
+    width: 400px; 
+    height: 210px;
     box-shadow: 0 4px 15px rgba(80, 80, 80, 0.123);
     display: none;
     z-index: 9999;
@@ -330,6 +335,85 @@ h5{
     text-align: center;
 }
 
+/*Ventana OK Mostrar Tasa Interés*/
+.custom-alertTasa {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background-image: linear-gradient(to right bottom, #000000, #060606, #0b0b0b, #101010, #141414, #17161c, #1a1825, #1d192d, #21183c, #27164a, #301158, #3b0464);
+    border: 1px solid #fff;
+    padding: 30px;
+    width: 400px; 
+    height: 210px;
+    box-shadow: 0 4px 15px rgba(80, 80, 80, 0.123);
+    display: none;
+    z-index: 9999;
+}
+.custom-alertTasa button {
+    position: fixed;
+    top: 145px;
+    left: 160px;
+    background-color: transparent;
+    color: #55ffe2;
+    border: 1px solid #55ffe2;
+    border-radius: 3px;
+    padding: 8px 16px;
+    cursor: pointer;
+    &:hover{
+        background-color: #55ffe2;
+        color: #1a1818;
+    }
+}
+
+
+/*Ventana OK Mostrar Tasas*/
+.custom-alertTVigente {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background-image: linear-gradient(to right bottom, #000000, #060606, #0b0b0b, #101010, #141414, #17161c, #1a1825, #1d192d, #21183c, #27164a, #301158, #3b0464);
+    border: 1px solid #fff;
+    padding: 30px;
+    width: 400px; 
+    height: 270px;
+    box-shadow: 0 4px 15px rgba(80, 80, 80, 0.123);
+    display: none;
+    z-index: 9999;
+}
+.custom-alertTVigente button {
+    position: fixed;
+    top: 200px;
+    left: 160px;
+    background-color: transparent;
+    color: #55ffe2;
+    border: 1px solid #55ffe2;
+    border-radius: 3px;
+    padding: 8px 16px;
+    cursor: pointer;
+    &:hover{
+        background-color: #55ffe2;
+        color: #1a1818;
+    }
+}
+.imgOK{
+    position: fixed;
+    width: 70px;    
+    height: 70px;
+    top: -35px;
+    left: 165px;
+}
+.txtOK{
+    position: fixed;
+    left: 0px;
+    font-size: 1.3rem;
+    margin: 35px 10px 20px 10px;
+    text-align: center;
+}
+
 /*Imagen de Fondo Flazo Fijo y Crédito*/
 .columna-imagen {
     height: 100vh;
@@ -347,7 +431,9 @@ h5{
 }
 .columna-imagen:hover img {
     opacity: 0.8;
+    transform: scale(1.04);
 }
+
 .tituloPrincipal{
     font-size: 2.4rem;
     color: #55ffe2;
@@ -370,9 +456,93 @@ h5{
 /*Formulario Plazo Fijo*/
 .formDiv{
     padding-top: 4%;
-    display: flex; /* Usa Flexbox */
-    justify-content: center; /* Centra horizontalmente */
+    display: flex;
+    justify-content: center; 
     .formPF{
+        .txtEtiqueta{
+            font-size: 1.4rem;
+            color: #55ffe2;
+            text-align: left;
+            font-weight: normal;
+            padding-left: 5px;
+            padding-bottom: 5px;
+        }
+        .txtCampo{
+            width: 100%;
+            text-align: center;
+            font-size: 1.1rem;
+            background-color: transparent;
+            color: #55ffe2;
+            border: 1px solid #55ffe2;
+            border-radius:7px;
+            padding: 10px;
+            margin: 5px 5px 20px 5px;
+        }
+        .txtCampo:active{
+            background-color: #ccc;
+        }
+        .txtCampo:focus {
+            color: #55ffe2;
+            background-color: #8906e62a;
+            border-color: #8806e6;
+            outline: 0;
+            box-shadow: 0 0 0 0.1rem #000000;
+        }
+        .divBotones {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0 30px 0 30px;
+        }
+        .botonFormBorrar{
+            width: 120px;
+            background-color: transparent;
+            color: #55ffe2;
+            border: 1px solid #55ffe2;
+            border-radius: 25px;
+            font-size: 1rem;
+            text-align: center;
+            padding: 10px;
+            margin: 15px 5px 5px 5px;
+            cursor: pointer;
+            transition: background-color 1s ease, color 1s ease;
+        }
+        .botonFormBorrar:hover{
+            background-color: #55ffe2;
+            color: #ccc;
+        }
+        .botonForm{
+            width: 120px;
+            background-color: transparent;
+            color: #ccc;
+            border: 1px solid #55ffe2;
+            border-radius: 25px;
+            font-size: 1rem;
+            text-align: center;
+            padding: 10px;
+            margin: 15px 5px 5px 5px;
+            cursor: pointer;
+            transition: background-color 1s ease, color 1s ease;
+        }
+        .botonForm:hover{
+            background-color: #55ffe2;
+            color: #ccc;
+        }     
+    }
+}
+@media screen and (max-width: 768px){
+    .tituloContacto{
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+
+/*Formulario Contacto*/
+.formDivContacto{
+    padding-top: 4%;
+    display: flex;
+    justify-content: center; 
+    .formPFContacto{
+        width: 40%;
         .txtEtiqueta{
             font-size: 1.4rem;
             color: #55ffe2;
@@ -504,4 +674,68 @@ h5{
         color: #55ffe2;
         padding: 20px 0px 0px 0px;
     }
+}
+
+/*Resultados Prestamo*/
+.divResultadosPrestamo {
+    margin: 0 auto;
+    width: fit-content;
+    width: 40%;
+    color: #55ffe2;
+    padding-bottom: 30px;
+}
+.textoChicoPrestamo{
+    font-size: 0.9rem;
+    color: #ccc;
+    text-align: center;
+    padding: 3% 25% 1% 25%;
+}
+
+/* Cambiar Estilos Modal */
+.modal-content {
+    background-image: linear-gradient(to right bottom, #000000, #060606, #0b0b0b, #101010, #141414, #17161c, #1a1825, #1d192d, #21183c, #27164a, #301158, #3b0464);
+}
+.modal-title {
+    color: #55ffe2;
+}
+.modal-body {
+    text-align: center;
+    padding-top: 30px;
+    color: #55ffe2;
+}
+
+/*Promociones*/
+.promociones{
+    padding-top: 15px;
+    .promocion{
+        width: 35%;
+        font-size: 1.2rem;
+        transition: opacity 0.5s ease;
+    }
+}
+
+/*Texto Ventana Tasas Vigentes*/
+.txtTasas{
+    position: fixed;
+    width: 95%;
+    left: 0px;
+    font-size: 1.3rem;
+    margin: 35px 10px 20px 10px;
+    text-align: center;
+}
+.pTitTasas{
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: bold;
+    color: #8806e6;
+    margin-top: -5px;
+    margin-bottom: 20px;
+}
+.pTasas{
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: normal;
+    color: #ccc;
+    line-height: 1rem;
+    margin-top: -7px;
 }

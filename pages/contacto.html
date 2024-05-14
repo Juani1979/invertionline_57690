@@ -9,44 +9,68 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
-
     <script src="https://kit.fontawesome.com/92ab279d80.js" crossorigin="anonymous"></script>
-    
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html"><img class="logoMenu" src="../assets/img/logo.png" alt="Logo Invertí Online" title="Invertí Online">&nbsp;&nbsp;&nbsp;Invertí Online</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse  justify-content-end" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="../index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../pages/prestamos.html">Simulá tu Prestamo</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../pages/plazo_fijo.html">Simulá tu Plazo Fijo</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active colorActive" href="../pages/contacto.html">Contacto</a>
-                </li>
-              </ul>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/prestamos.html">Simulá tu Préstamo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/plazo_fijo.html">Simulá tu Plazo Fijo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/plazo_fijo_tasas.html">Calculá tu Tasa de Interés</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active colorActive" href="../pages/contacto.html">Contacto</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
+    <div class="container-fluid">
+        <div class="row full-height">
+            <div class="col-sm-4 columna-imagen">
+                <img src="../assets/img/img_contacto.jpg" alt="Inverí Online">
+            </div>
+            <div class="col-sm-8">
+                <p class="tituloPrincipal">Ponete en contacto con nosotros</p>
+                <p class="tituloSecundario">¡Estamos aquí para ayudarte!</p>
+                <div class="formDivContacto">
+                    <form class="formPFContacto" action="404.html" method="get">
+                        <label class="txtEtiqueta" for="nombre">Nombre</label><br>
+                        <input class="txtCampo" type="text" id="nombreContacto" name="nombreContacto" required autocomplete="off"><br>
+                        <label class="txtEtiqueta" for="email">Email</label><br>
+                        <input class="txtCampo" type="email" placeholder="ejemplo@coffeeshop.com" required autocomplete="off" id="emailContacto" name="emailContacto"><br>
+                        <label class="txtEtiqueta" for="telefono">Teléfono</label><br>
+                        <input class="txtCampo" type="text" id="telefono" name="telefono" required autocomplete="off"><br>
+                        <label class="txtEtiqueta" for="mensaje">Mensaje</label><br>
+                        <textarea class="txtCampo" id="mensaje" name="mensaje" placeholder="Completá tu mensaje..." rows="3" required autocomplete="off" style="text-align: left;"></textarea><br>
+                        <center><input class="btn btn-primary btnAcceso" type="reset" value="Borrar">
+                        <input class="btn btn-primary btnAcceso" type="submit" value="Enviar"></center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="../js/jquery-3.5.1.slim.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
-
-    <script src="../js/main_contacto.js"></script>
 </body>
 </html>

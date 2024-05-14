@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulá tu Plazo Fijo | INVERTI ONLINE</title>
+    <title>Calculá tu Tasa de Interés | INVERTI ONLINE</title>
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,10 +30,10 @@
                         <a class="nav-link" href="../pages/prestamos.html">Simulá tu Préstamo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active colorActive" href="../pages/plazo_fijo.html">Simulá tu Plazo Fijo</a>
+                        <a class="nav-link" href="../pages/plazo_fijo.html">Simulá tu Plazo Fijo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../pages/plazo_fijo_tasas.html">Calculá tu Tasa de Interés</a>
+                        <a class="nav-link active colorActive" href="../pages/plazo_fijo_tasas.html">Calculá tu Tasa de Interés</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../pages/contacto.html">Contacto</a>
@@ -49,29 +49,46 @@
                 <img src="../assets/img/img_plazofijo.jpg" alt="Inverí Online">
             </div>
             <div class="col-sm-8">
-                <p class="tituloPrincipal">Simulá tu Plazo Fijo</p>
+                <p class="tituloPrincipal">Calculá tu Tasa de Interés</p>
                 <p class="tituloSecundario">Una alternativa de inversión de muy bajo riesgo que te permite obtener rendimientos sobre tus ahorros a cambio de inmovilizarlos durante un periodo de tiempo.</p>
                 <div class="formDiv">
-                  <form id="plazoFijoForm" class="formPF">
-                      <label class="txtEtiqueta" for="plazoDias">Plazo (en días)</label><br>
-                      <input class="txtCampo" type="number" id="plazoDias" name="plazoDias"><br><br>
-                      <label class="txtEtiqueta" for="capital">Capital a Invertir</label><br>
-                      <input class="txtCampo" type="number" id="capital" name="capital"><br><br>
-                      <button id="btnPlazoFijo" class="btn btn-primary btnAcceso" type="submit">Simular Ahora</button>
-                      <button id="btnLimpiar" class="btn btn-primary btnAcceso" type="reset">Borrar</button>
-                      <a class="btn btn-primary btnAcceso" href="../pages/plazo_fijo_tasas.html">Consultá tu Tasa</a>
-                  </form>
+                    <form id="formTasas" class="formPF">
+                        <label class="txtEtiqueta" for="dias">Ingresá la Cantidad de días</label><br>
+                        <input class="txtCampo"  type="number" id="dias" name="dias">
+                        <div style="font-size: 0.8rem; margin-left: 15px; margin-top: -15px; color: #ccc;">Mínimo 30 días | Máximo 365 días</div><br><br>
+                        <center>
+                        <button class="btn btn-primary btnAcceso" type="submit">Calcular Tasa</button>
+                        <button id="btnLimpiar" class="btn btn-primary btnAcceso" type="reset">Borrar</button><br>
+                        <button id="btnTasas" class="btn btn-primary btnAcceso" type="reset">Consultar Tasas Vigentes</button><br>
+                        <a class="btn btn-primary btnAcceso" href="../pages/plazo_fijo.html">Regresar</a>
+                        </center>
+                    </form>
+                    <br>
                 </div>
                 <p class="textoChico">El uso de esta herramienta no implica celebrar contrato alguno con nosotros. La exhibición de los productos, servicios o información financiera que se brinda a través de la misma, sólo tiene carácter informativo y orientativo para el interesado respecto de los depósitos a plazo fijo que se realicen por este canal.</p>
             </div>
         </div>
     </div>
 
-    <!-- Ventana control datos ingresados -->
+    <!-- Ventana mostrar datos de Error -->
     <div id="customAlert" class="custom-alert">
-        <img class="imgError" src="../assets/img/icono_error.png" alt="Error Invertí Online" title="Invertí Online">
+        <img class="imgError" src="../assets/img/icono_error.png" alt="Invertí Online" title="Invertí Online">
         <span class="txtError" id="customAlertMessage"></span><br>
         <button id="customAlertClose">Cerrar</button>
+    </div>
+
+    <!-- Ventana mostrar Tasa de Interés  -->
+    <div id="customAlertTasa" class="custom-alertTasa">
+        <img class="imgOK" src="../assets/img/icono_ok.png" alt="Invertí Online" title="Invertí Online">
+        <span class="txtOK" id="customAlertMessageTasa"></span><br>
+        <button id="customAlertCloseTasa">Cerrar</button>
+    </div>
+
+    <!-- Ventana mostrar TODAS las Tasas Vigentes -->
+    <div id="customAlertTVigente" class="custom-alertTVigente">
+        <img class="imgOK" src="../assets/img/icono_tasas.png" alt="Invertí Online" title="Invertí Online">
+        <span class="txtTasas" id="customAlertMessageTVigente"></span><br>
+        <button id="customAlertCloseTVigente">Cerrar</button>
     </div>
 
     <script src="../js/jquery-3.5.1.slim.min.js"></script>
@@ -79,7 +96,6 @@
     <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/bootstrap.min.js"></script>
 
-    <script src="../js/main_plazo_fijo.js"></script>
-    <script src="../js/plazo_fijo.js"></script>
+    <script src="../js/plazo_fijo_tasas.js"></script>
 </body>
 </html>

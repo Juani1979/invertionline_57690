@@ -9,49 +9,76 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
-
     <script src="https://kit.fontawesome.com/92ab279d80.js" crossorigin="anonymous"></script>
-    
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>   
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html"><img class="logoMenu" src="../assets/img/logo.png" alt="Logo Invertí Online" title="Invertí Online">&nbsp;&nbsp;&nbsp;Invertí Online</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse  justify-content-end" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="../index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active colorActive" href="../pages/prestamos.html">Simulá tu Prestamo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../pages/plazo_fijo.html">Simulá tu Plazo Fijo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../pages/contacto.html">Contacto</a>
-              </li>
-            </ul>
-          </div>
-       </div>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"><img class="logoMenu" src="../assets/img/logo.png" alt="Logo Invertí Online" title="Invertí Online">&nbsp;&nbsp;&nbsp;Invertí Online</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active colorActive" href="../pages/prestamos.html">Simulá tu Préstamo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/plazo_fijo.html">Simulá tu Plazo Fijo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/plazo_fijo_tasas.html">Calculá tu Tasa de Interés</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <div class="containerPF">
-        <div class="contentPF">
-            <button id="btnPrestamo" class="btn btn-primary btnAcceso">Simulá ahora tu Préstamo</button>
+    <div class="container-fluid">
+        <div class="row full-height">
+            <div class="col-sm-4 columna-imagen">
+                <img src="../assets/img/img_credito.jpg" alt="Inverí Online">
+            </div>
+            <div class="col-sm-8">
+                <p class="tituloPrincipal">Simulá tu Préstamo</p>
+                <p class="tituloSecundario">Destinado a Personas humanas en actividad laboral, aptas para obligarse y con una edad máxima a la fecha prevista para la cancelación del préstamo que no sea superior a la prevista para jubilarse en el régimen al que pertenece.</p>
+                <div class="formDiv">
+                  <form id="prestamoForm" class="formPF">
+                      <label class="txtEtiqueta" for="monto">Monto a solicitar en Pesos</label><br>
+                      <input class="txtCampo" type="number" id="monto" name="monto">
+                      <div style="font-size: 0.8rem; margin-left: 15px; margin-top: -15px; color: #ccc;">Monto máximo a ingresar: $3.000.000</div><br><br>
+                      <label class="txtEtiqueta" for="plazo">Plazo en Meses</label><br>
+                      <input class="txtCampo" type="number" id="plazo" name="plazo">
+                      <div style="font-size: 0.8rem; margin-left: 15px; margin-top: -15px; color: #ccc;">Plazo máximo a ingresar: 18 meses</div><br><br>
+                      <center><button id="btnPrestamo" class="btn btn-primary btnAcceso">Simular Ahora</button>
+                      <button id="btnLimpiar" class="btn btn-primary btnAcceso" type="reset">Borrar</button></center>
+                  </form>
+                </div>
+                <p class="textoChico">El uso de esta herramienta no implica celebrar contrato alguno con nosotros. La exhibición de los productos, servicios o información financiera que se brinda a través de la misma, sólo tiene carácter informativo y orientativo para el interesado.</p>
+            </div>
         </div>
+    </div>
+
+    <!-- Ventana control datos ingresados -->
+    <div id="customAlert" class="custom-alert">
+        <img class="imgError" src="../assets/img/icono_error.png" alt="Error Invertí Online" title="Invertí Online">
+        <span class="txtError" id="customAlertMessage"></span><br>
+        <button id="customAlertClose">Cerrar</button>
     </div>
 
     <script src="../js/jquery-3.5.1.slim.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <script src="../js/main_prestamos.js"></script>
     <script src="../js/prestamos.js"></script>
