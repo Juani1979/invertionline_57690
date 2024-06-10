@@ -6,7 +6,7 @@ function funcionPrestamo() {
         tasaNominal: 0.89,
         calcularCuotaMensual: function(monto, plazo) {
             const tasaEfectivaMensual = this.tasaNominal / 12
-            return (monto * tasaEfectivaMensual) / (1 - Math.pow((1 + tasaEfectivaMensual), - plazo))
+            return (monto * tasaEfectivaMensual) / (1 - Math.pow((1 + tasaEfectivaMensual), -plazo))
         },
         validarMonto: function(monto) {
             return monto > 0 && !isNaN(monto) && monto <= this.montoMaximo
@@ -31,7 +31,7 @@ function funcionPrestamo() {
         } else {
             let cuotaMensual = prestamo.calcularCuotaMensual(montoSolicitado, plazoMeses)
 
-            let detalleCuotas = "Monto Solicitado: $" + montoSolicitado.toFixed(2) + "\n" +
+            let detalleCuotas = "Monto Solicitado: $" + montoSolicitado.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + "\n" +
                                 "Plazo: " + plazoMeses + " Meses\n" +
                                 "Tasa Nominal: " + (prestamo.tasaNominal * 100) + "%\n\n" +
                                 "Detalle de Cuotas a Pagar:\n\n"
@@ -46,9 +46,9 @@ function funcionPrestamo() {
 
                 cuotas.push({
                     numero: mes,
-                    cuota: cuotaMensual.toFixed(2),
-                    interes: interesMensual.toFixed(2),
-                    amortizacion: amortizacion.toFixed(2)
+                    cuota: cuotaMensual.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+                    interes: interesMensual.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+                    amortizacion: amortizacion.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                 })
 
                 saldoRestante -= amortizacion

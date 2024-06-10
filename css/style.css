@@ -65,6 +65,14 @@ body{
     .nav-link:hover, .nav-link:focus {
         color: #55ffe2;
     }
+    .offcanvas-footer {
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        width: 100%;
+        padding: 10px;
+        line-height: 1.1;
+    }
 }
 
 /* Menú */
@@ -438,7 +446,7 @@ h5{
     font-size: 2.4rem;
     color: #55ffe2;
     text-align: center;
-    padding: 12% 2% 0.5% 2%;
+    padding: 11% 2% 0.5% 2%;
 }
 .tituloSecundario{
     font-size: 1.3rem;
@@ -446,11 +454,18 @@ h5{
     text-align: center;
     padding: 0% 15% 1% 15%;
 }
-.textoChico{
+.full-height {
+    height: 100vh;
+    position: relative;
+}
+.textoChico {
     font-size: 0.9rem;
     color: #ccc;
+    position: absolute;
+    bottom: 0;
+    width: auto;
     text-align: center;
-    padding: 10% 25% 1% 25%;
+    padding: 2%;
 }
 
 /*Formulario Plazo Fijo*/
@@ -620,6 +635,56 @@ h5{
     }
 }
 
+/*Formulario Cotizaciones*/
+.divTab{
+    .tituloTab{
+        font-size: 1.8rem;
+        color: #55ffe2;
+        margin-top: 40px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    .textoTab{
+        font-size: 1.3rem;
+        color: #fff;
+        margin-top: 10px;
+        text-align: center;
+    }
+    
+    .textoPromTab{
+        font-size: 1.3rem;
+        color: #fff;
+        margin-top: 30px;
+        text-align: center;
+    }
+    
+    .textoPeqTab{
+        font-size: 0.9rem;
+        color: #fff;
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .nav{
+        width: 65%;
+        padding-top: 4%;
+        display: flex;
+        margin: 0 auto;
+        border-color: #8806e6;
+        .nav-link{
+            border-color: #8806e6;
+            color: #8806e6;
+            padding: 15px;
+        }
+        .navegacion{
+            font-size: 1.3rem;
+        }
+    }
+}
+
+
+
 /* Resultados del Plazo Fijo */
 .divResultados {
     margin: 0 auto;
@@ -687,8 +752,11 @@ h5{
 .textoChicoPrestamo{
     font-size: 0.9rem;
     color: #ccc;
+    position: absolute;
+    bottom: 0;
+    width: auto;
     text-align: center;
-    padding: 3% 25% 1% 25%;
+    padding: 2%;
 }
 
 /* Cambiar Estilos Modal */

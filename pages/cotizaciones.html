@@ -27,7 +27,7 @@
                         <a class="nav-link" href="../index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active colorActive" href="../pages/prestamos.html">Simulá tu Préstamo</a>
+                        <a class="nav-link" href="../pages/prestamos.html">Simulá tu Préstamo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../pages/plazo_fijo.html">Simulá tu Plazo Fijo</a>
@@ -36,7 +36,7 @@
                         <a class="nav-link" href="../pages/plazo_fijo_tasas.html">Calculá tu Tasa de Interés</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../pages/cotizaciones.html">Cotización Dólar</a>
+                        <a class="nav-link active colorActive" href="../pages/cotizaciones.html">Cotización Dólar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../pages/contacto.html">Contacto</a>
@@ -49,33 +49,43 @@
     <div class="container-fluid">
         <div class="row full-height">
             <div class="col-sm-4 columna-imagen">
-                <img src="../assets/img/img_credito.jpg" alt="Inverí Online" class="img-fluid">
+                <img src="../assets/img/img_cotizaciones.jpg" alt="Inverí Online">
             </div>
             <div class="col-sm-8">
-                <p class="tituloPrincipal">Simulá tu Préstamo</p>
-                <p class="tituloSecundario">Destinado a Personas humanas en actividad laboral, aptas para obligarse y con una edad máxima a la fecha prevista para la cancelación del préstamo que no sea superior a la prevista para jubilarse en el régimen al que pertenece.</p>
-                <div class="formDiv">
-                  <form id="prestamoForm" class="formPF">
-                      <label class="txtEtiqueta" for="monto">Monto a solicitar en Pesos</label><br>
-                      <input class="txtCampo" type="number" id="monto" name="monto">
-                      <div style="font-size: 0.8rem; margin-left: 15px; margin-top: -15px; color: #ccc;">Monto máximo a ingresar: $3.000.000</div><br><br>
-                      <label class="txtEtiqueta" for="plazo">Plazo en Meses</label><br>
-                      <input class="txtCampo" type="number" id="plazo" name="plazo">
-                      <div style="font-size: 0.8rem; margin-left: 15px; margin-top: -15px; color: #ccc;">Plazo máximo a ingresar: 18 meses</div><br><br>
-                      <center><button id="btnPrestamo" class="btn btn-primary btnAcceso">Simular Ahora</button>
-                      <button id="btnLimpiar" class="btn btn-primary btnAcceso" type="reset">Borrar</button></center>
-                  </form>
+                <p class="tituloPrincipal">Cotización Dólar</p>
+                <p class="tituloSecundario">Los valores están expresados en Pesos Argentinos.<br>Se presentan únicamente con fines informativos.</p>
+              
+                <div class="divTab">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item navegacion">
+                            <a class="nav-link active" id="oficial-tab" data-toggle="tab" href="#oficial" role="tab" aria-controls="oficial" aria-selected="true">Dólar Oficial</a>
+                        </li>
+                        <li class="nav-item navegacion">
+                            <a class="nav-link" id="blue-tab" data-toggle="tab" href="#blue" role="tab" aria-controls="blue" aria-selected="false">Dólar Blue</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="oficial" role="tabpanel" aria-labelledby="oficial-tab">
+                            <p class="tituloTab">Cotización Dólar Oficial</p>
+                            <p class="textoTab">Compra: $<span id="oficial-buy"></span></p>
+                            <p class="textoTab">Venta: $<span id="oficial-sell"></span></p>
+                            <p class="textoPromTab">Promedio: $<span id="oficial-avg"></span></p>
+                            <p class="textoPeqTab">Cotización al: <span id="fecha-hoy-oficial"></span></p>
+                        </div>
+                        <div class="tab-pane fade" id="blue" role="tabpanel" aria-labelledby="blue-tab">
+                            <p class="tituloTab">Cotización Dólar Blue</p>
+                            <p class="textoTab">Compra: $<span id="blue-buy"></span></p>
+                            <p class="textoTab">Venta: $<span id="blue-sell"></span></p>
+                            <p class="textoPromTab">Promedio: $<span id="blue-avg"></span></p>
+                            <p class="textoPeqTab">Cotización al: <span id="fecha-hoy-blue"></span></p>
+                        </div>
+                    </div>
                 </div>
+
                 <p class="textoChico">El uso de esta herramienta no implica celebrar contrato alguno con nosotros. La exhibición de los productos, servicios o información financiera que se brinda a través de la misma, sólo tiene carácter informativo y orientativo para el interesado.</p>
             </div>
         </div>
-    </div>
-
-    <!-- Ventana control datos ingresados -->
-    <div id="customAlert" class="custom-alert">
-        <img class="imgError" src="../assets/img/icono_error.png" alt="Error Invertí Online" title="Invertí Online">
-        <span class="txtError" id="customAlertMessage"></span><br>
-        <button id="customAlertClose">Cerrar</button>
     </div>
 
     <script src="../js/jquery-3.5.1.slim.min.js"></script>
@@ -83,7 +93,6 @@
     <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/bootstrap.min.js"></script>
 
-    <script src="../js/main_prestamos.js"></script>
-    <script src="../js/prestamos.js"></script>
+    <script src="../js/cotizaciones.js"></script>
 </body>
 </html>
