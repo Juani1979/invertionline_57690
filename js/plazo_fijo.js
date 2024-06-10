@@ -32,11 +32,15 @@ function funcionPlazoFijo() {
                 const montoTotal = capital + interesGanado
                 const tasaPlazoFijo = tasaMensual * 100
 
-                // Redirigir a plazo_fijo_res.html con los resultados en la URL
+                const capitalFormateado = capital.toLocaleString('es-ES')
+                const interesGanadoFormateado = interesGanado.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+                const montoTotalFormateado = montoTotal.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+
+                // Mandar a plazo_fijo_res los resultados
                 window.location.href = "plazo_fijo_res.html?plazoDias=" + plazoDias +
-                    "&capital=" + capital +
-                    "&interesesGanados=" + interesGanado.toFixed(2) +
-                    "&montoTotal=" + montoTotal.toFixed(2) +
+                    "&capital=" + capitalFormateado +
+                    "&interesesGanados=" + interesGanadoFormateado +
+                    "&montoTotal=" + montoTotalFormateado +
                     "&tasaMensual=" + tasaPlazoFijo.toFixed(0)
             } else {
                 mostrarAlerta("No se encontró una tasa para el plazo ingresado.")
@@ -63,4 +67,8 @@ function mostrarAlerta(mensaje) {
     customAlertClose.addEventListener("click", function() {
         customAlert.style.display = "none"
     })
+
+    // Limpiar campos
+    document.getElementById("plazoDias").value = ''
+    document.getElementById("capital_visible").value = ''
 }

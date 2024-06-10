@@ -58,8 +58,10 @@
                   <form id="plazoFijoForm" class="formPF">
                       <label class="txtEtiqueta" for="plazoDias">Plazo (en días)</label><br>
                       <input class="txtCampo" type="number" id="plazoDias" name="plazoDias"><br><br>
-                      <label class="txtEtiqueta" for="capital">Capital a Invertir</label><br>
-                      <input class="txtCampo" type="number" id="capital" name="capital"><br><br>
+                      <label class="txtEtiqueta" for="capital_visible">Capital a Invertir</label><br>
+                      <input class="txtCampo" type="text" id="capital_visible">
+                      <input type="hidden" id="capital" name="capital">
+                      <br><br>
                       <button id="btnPlazoFijo" class="btn btn-primary btnAcceso" type="submit">Simular Ahora</button>
                       <button id="btnLimpiar" class="btn btn-primary btnAcceso" type="reset">Borrar</button>
                       <a class="btn btn-primary btnAcceso" href="../pages/plazo_fijo_tasas.html">Consultá tu Tasa</a>
@@ -84,5 +86,18 @@
 
     <script src="../js/main_plazo_fijo.js"></script>
     <script src="../js/plazo_fijo.js"></script>
+
+    <script>
+        function formatNumber(value) {
+            return Number(value.replace(/\D/g, '')).toLocaleString('es-AR')
+        }
+
+        document.getElementById('capital_visible').addEventListener('input', function() {
+            let inputVal = this.value.replace(/\D/g, '')
+            let formattedVal = formatNumber(this.value)
+            document.getElementById('capital').value = inputVal
+            this.value = formattedVal
+        })
+    </script>
 </body>
 </html>

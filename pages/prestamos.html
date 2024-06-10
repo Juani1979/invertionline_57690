@@ -56,8 +56,9 @@
                 <p class="tituloSecundario">Destinado a Personas humanas en actividad laboral, aptas para obligarse y con una edad máxima a la fecha prevista para la cancelación del préstamo que no sea superior a la prevista para jubilarse en el régimen al que pertenece.</p>
                 <div class="formDiv">
                   <form id="prestamoForm" class="formPF">
-                      <label class="txtEtiqueta" for="monto">Monto a solicitar en Pesos</label><br>
-                      <input class="txtCampo" type="number" id="monto" name="monto">
+                      <label class="txtEtiqueta" for="monto_visible">Monto a solicitar en Pesos</label><br>
+                      <input class="txtCampo" type="text" id="monto_visible">
+                      <input type="hidden" id="monto" name="monto">
                       <div style="font-size: 0.8rem; margin-left: 15px; margin-top: -15px; color: #ccc;">Monto máximo a ingresar: $3.000.000</div><br><br>
                       <label class="txtEtiqueta" for="plazo">Plazo en Meses</label><br>
                       <input class="txtCampo" type="number" id="plazo" name="plazo">
@@ -85,5 +86,18 @@
 
     <script src="../js/main_prestamos.js"></script>
     <script src="../js/prestamos.js"></script>
+
+    <script>
+        function formatNumber(value) {
+            return Number(value.replace(/\D/g, '')).toLocaleString('es-AR')
+        }
+
+        document.getElementById('monto_visible').addEventListener('input', function() {
+            let inputVal = this.value.replace(/\D/g, '')
+            let formattedVal = formatNumber(this.value)
+            document.getElementById('monto').value = inputVal
+            this.value = formattedVal
+        })
+    </script>
 </body>
 </html>

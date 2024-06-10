@@ -31,7 +31,7 @@ function funcionPrestamo() {
         } else {
             let cuotaMensual = prestamo.calcularCuotaMensual(montoSolicitado, plazoMeses)
 
-            let detalleCuotas = "Monto Solicitado: $" + montoSolicitado.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + "\n" +
+            let detalleCuotas = "Monto Solicitado: $" + montoSolicitado.toLocaleString('es-ES') + "\n" +
                                 "Plazo: " + plazoMeses + " Meses\n" +
                                 "Tasa Nominal: " + (prestamo.tasaNominal * 100) + "%\n\n" +
                                 "Detalle de Cuotas a Pagar:\n\n"
