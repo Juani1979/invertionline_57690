@@ -3,7 +3,7 @@ let tasas = [
     { rango: "de 30 a 59 días", tasa: 0.40 },
     { rango: "de 60 a 89 días", tasa: 0.35 },
     { rango: "de 90 a 365 días", tasa: 0.25 }
-];
+]
 
 // Calcular Tasa de Interés de los días ingresados
 function calcularTasa(event) {
