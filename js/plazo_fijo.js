@@ -33,7 +33,7 @@ function funcionPlazoFijo() {
                 const tasaPlazoFijo = tasaMensual * 100
 
                 const capitalFormateado = capital.toLocaleString('es-ES')
-                const interesGanadoFormateado = interesGanado.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+                const interesGanadoFormateado =  interesGanado.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })                
                 const montoTotalFormateado = montoTotal.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 
                 // Mandar a plazo_fijo_res los resultados

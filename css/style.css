@@ -151,7 +151,7 @@ h5{
 
 /*Potencial*/
 .tituloPotencial{
-    font-size: 3.7rem;
+    font-size: 3.2vw;
     color: #8806e6;
     width: 70%;
     line-height: 0.8;
@@ -217,6 +217,42 @@ h5{
 .container-imagen:hover .texto-derecha {
     opacity: 1;
 }
+.texto-inferior-izquierda {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-size: 14px;
+    color: #999;
+}
+.whatsapp-logo {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px;
+    z-index: 1000;
+}
+.whatsapp-logo img {
+    width: 54px;
+    height: 54px;
+}
+
+.social-icons {
+    width: 100%;
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    padding: 10px;
+}
+
+.social-icons a img {
+    width: 24px; /* Ajusta según sea necesario */
+    margin-top: -190px;
+    margin-left: 8px;
+}
+
+.social-icons p {
+    font-size: 14px; /* Ajusta según sea necesario */
+    margin: 10px 0 0;
+}
 
 /* Galeria Principal*/
 .galeriaFotos{
@@ -280,7 +316,7 @@ h5{
     background-color: #1a1818;
     color: #55ffe2;
     border: 1px solid #55ffe2;
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin: 15px;
     &:hover{
         background-color: #55ffe2;
@@ -774,10 +810,12 @@ h5{
 
 /*Promociones*/
 .promociones{
-    padding-top: 15px;
+    padding-top: 18px; 
     .promocion{
-        width: 35%;
+        width: 40%;
         font-size: 1.2rem;
+        font-weight: 300;
+        line-height: 1.2;
         transition: opacity 0.5s ease;
     }
 }

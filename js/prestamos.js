@@ -31,7 +31,7 @@ function funcionPrestamo() {
         } else {
             let cuotaMensual = prestamo.calcularCuotaMensual(montoSolicitado, plazoMeses)
 
-            let detalleCuotas = "Monto Solicitado: $" + montoSolicitado.toLocaleString('es-ES') + "\n" +
+            let detalleCuotas = "Monto Solicitado: $ " + montoSolicitado.toLocaleString('es-ES') + "\n" +
                                 "Plazo: " + plazoMeses + " Meses\n" +
                                 "Tasa Nominal: " + (prestamo.tasaNominal * 100) + "%\n\n" +
                                 "Detalle de Cuotas a Pagar:\n\n"
@@ -56,7 +56,7 @@ function funcionPrestamo() {
             }
 
             cuotas.forEach(function(cuota) {
-                detalleCuotas += `✓ Cuota Nro.` + cuota.numero + `: $` + cuota.cuota + ` (Int. $` + cuota.interes + ` + Cap. $` + cuota.amortizacion + `)\n`
+                detalleCuotas += `✓ Cuota Nro. ` + cuota.numero + `: $ ` + cuota.cuota + ` (Int. $ ` + cuota.interes + ` + Cap. $ ` + cuota.amortizacion + `)\n`
             })
             
             localStorage.setItem('detalleCuotas', detalleCuotas)
